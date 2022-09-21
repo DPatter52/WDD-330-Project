@@ -1,3 +1,5 @@
+import ProductData from './productData.js';
+
 let products = [];
 function convertToJson(res) {
   if (res.ok) {
