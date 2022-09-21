@@ -19,8 +19,8 @@ export default class ProductDetails {
       .addEventListener("click", this.addToCart.bind(this));
   }
 
-  addToCart(e) {
-    setLocalStorage("so-cart", product);
+  addToCart() {
+    setLocalStorage("so-cart", this.product);
   }
 
   renderProductDetails() {
