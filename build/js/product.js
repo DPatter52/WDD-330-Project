@@ -1,4 +1,10 @@
 import ProductData from './productData.js';
+import { getParam } from './utils.js';
+const dataSource = new ProductData('tents');
+
+const productId = getParam('product');
+
+console.log(dataSource.findProductById(productId));
 
 let products = [];
 function convertToJson(res) {
