@@ -22,9 +22,9 @@ export function setClick(selector, callback) {
   qs(selector).addEventListener("click", callback);
 }
 
-export default getParam(param); {
+getParam(param);{
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
-  const product = urlParams.get('product');
+  const product = urlParams.get("product")
   return
 }
