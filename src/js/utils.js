@@ -28,11 +28,15 @@ export function getParam(param) {
   return urlParams.get(param);
 }
 
-export function renderListWithTemplate(template, parentElement, list, callback) {
+export function renderListWithTemplate(
+  template,
+  parentElement,
+  list,
+  callback
+) {
   list.forEach((product) => {
     const clone = template.contentEditable.cloneNode(true);
     const hydratedTemplate = callback(clone, product);
     parentElement.appendChild(hydratedTemplate);
   });
-
 }

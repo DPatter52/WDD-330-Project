@@ -12,14 +12,18 @@ export default class ProductList {
   }
 
   prepareTemplate(template, product) {
-    template.querySelector('a').href += product.Id;
+    template.querySelector("a").href += product.Id;
     return template;
   }
 
   renderList(list) {
-    this.listElement.innerHTML = '';
+    this.listElement.innerHTML = "";
     const template = document.getElementById("product-card-template");
-    renderListWithTemplate(template, this.listElement, list, this.prepareTemplate)
-        
-    } 
+    renderListWithTemplate(
+      template,
+      this.listElement,
+      list,
+      this.prepareTemplate
+    );
+  }
 }
