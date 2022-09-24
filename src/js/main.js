@@ -1,5 +1,7 @@
 import ProductList from "./productList";
 
-ProductList() 
+const dataList = new ProductList("tents");
+
+console.log(dataList)
 
 
