@@ -1,3 +1,5 @@
+import { renderListWithTemplate } from "./utils";
+
 export default class ProductList {
   constructor(category, dataSource, listElement) {
     this.category = category;
@@ -9,11 +11,15 @@ export default class ProductList {
     const list = await this.dataSource.getData();
   }
 
-  renderList(list) {
-    const template = document.getElementById("product-card-template");
-    list.forEach((product) => {
-      const clone = template.contentEditable.cloneNode(true);
-      this.listElement.appendChild(clone);
-    });
+  prepareTemplate(template, product) {
+    template.querySelector('a').href += product.Id;
+    return template;
   }
+
+  renderList(list) {
+    this.listElement.innerHTML = '';
+    const template = document.getElementById("product-card-template");
+    renderListWithTemplate(template, this.listElement, list, this.prepareTemplate)
+        
+    } 
 }
