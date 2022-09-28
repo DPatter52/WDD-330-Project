@@ -9,7 +9,7 @@ module.exports = {
     out: "build",
     baseUrl: "/sleepoutside/build/",
     clean: true,
-    htmlFragment: true
+    htmlFragment: true,
   },
   experiments: {
     optimize: {
@@ -18,5 +18,4 @@ module.exports = {
       target: "es2015",
     },
   },
-
 };
