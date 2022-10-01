@@ -1,4 +1,4 @@
-const baseURL = 'http://server-nodejs.cit.byui.edu:3000/'
+const baseURL = "http://server-nodejs.cit.byui.edu:3000/";
 
 function convertToJson(res) {
   if (res.ok) {
@@ -12,14 +12,17 @@ export default class ProductData {
   contructor() {
     // this.category = category;
     // this.path = `../json/${this.category}.json`;
-
   }
 
   getData(category) {
-    return fetch(baseURL + `products/search/${category}`).then(convertToJson).then((data) => data.Result);
+    return fetch(baseURL + `products/search/${category}`)
+      .then(convertToJson)
+      .then((data) => data.Result);
   }
 
   async findProductById(id) {
-    return await fetch(baseURL + `product/${id}`).then(convertToJson).then((data) => data.Result);
+    return await fetch(baseURL + `product/${id}`)
+      .then(convertToJson)
+      .then((data) => data.Result);
   }
 }
