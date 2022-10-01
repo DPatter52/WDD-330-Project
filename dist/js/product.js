@@ -2,7 +2,9 @@
 
 var _productData = _interopRequireDefault(require("./productData.js"));
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _interopRequireDefault(obj) {
+  return obj && obj.__esModule ? obj : { default: obj };
+}
 
 const dataSource = new _productData.default("tents");
 console.log(dataSource.getData());
@@ -20,20 +22,20 @@ function setLocalStorage(key, data) {
   localStorage.setItem(key, JSON.stringify(data));
 } // get tents data
 
-
 function getProductsData() {
-  fetch("../json/tents.json").then(convertToJson).then(data => {
-    products = data;
-  });
+  fetch("../json/tents.json")
+    .then(convertToJson)
+    .then((data) => {
+      products = data;
+    });
 } // or should we do it this way?
 // async function getProductsDataAwait() {
 //   products = await fetch("../json/tents.json").then(convertToJson);
 // }
 // add to cart button event handler
 
-
 function addToCart(e) {
-  const product = products.find(item => item.Id === e.target.dataset.id);
+  const product = products.find((item) => item.Id === e.target.dataset.id);
   setLocalStorage("so-cart", product);
 }
 

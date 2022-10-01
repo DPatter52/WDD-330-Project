@@ -1,7 +1,5 @@
 module.exports = {
-  plugins: [
-    ['@snowpack/plugin-sass' ],
-  ],
+  plugins: [["@snowpack/plugin-sass"]],
   mount: {
     src: "/",
   },
@@ -12,7 +10,7 @@ module.exports = {
   },
   experiments: {
     optimize: {
-      'bundle': true,
+      bundle: true,
       minify: true,
       target: "es2015",
     },

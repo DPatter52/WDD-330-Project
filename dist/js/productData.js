@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+  value: true,
 });
 exports.default = void 0;
 
@@ -20,14 +20,15 @@ class ProductData {
   }
 
   getData() {
-    return fetch(this.path).then(convertToJson).then(data => data);
+    return fetch(this.path)
+      .then(convertToJson)
+      .then((data) => data);
   }
 
   async findProductById(id) {
     const products = await this.getData();
-    return products.find(item => item.Id === id);
+    return products.find((item) => item.Id === id);
   }
-
 }
 
 exports.default = ProductData;

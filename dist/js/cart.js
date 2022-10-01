@@ -7,7 +7,7 @@ function getLocalStorage(key) {
 function getCartContents() {
   let markup = "";
   const cartItems = getLocalStorage("so-cart");
-  const htmlItems = cartItems.map(item => renderCartItem(item));
+  const htmlItems = cartItems.map((item) => renderCartItem(item));
   document.querySelector(".product-list").innerHTML = htmlItems.join(""); // document.querySelector(".product-list").innerHTML = renderCartItem(cartItems);
 }
 
