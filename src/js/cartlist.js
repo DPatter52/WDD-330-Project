@@ -1,4 +1,4 @@
-import { getLocalStorage, renderListWithTemplate } from "./utils";
+import { getLocalStorage, renderListWithTemplate } from "./utils.js";
 
 export default class CartList {
   constructor(key, listElement) {
