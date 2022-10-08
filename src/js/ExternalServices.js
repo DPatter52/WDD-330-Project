@@ -1,5 +1,7 @@
-const baseURL = 'http://157.201.228.93:2992/';
+const baseURL = 'http://server-nodejs.cit.byui.edu:3000';
 // const baseURL = 'http://127.0.0.1:3000/';
+
+
 async function convertToJson(res) {
   const data = await res.json();
   if (res.ok) {
@@ -15,16 +17,19 @@ export default class ExternalServices {
     // this.category = category;
     // this.path = `../json/${this.category}.json`;
   }
+  
   getData(category) {
     // instead we will pass the category we want in here when we need it.
     return fetch(baseURL + `products/search/${category}`)
       .then(convertToJson)
       .then((data) => data.Result);
   }
+
   async findProductById(id) {
     return await fetch(baseURL + `product/${id}`).then(convertToJson)
       .then((data) => data.Result);
   }
+
   async checkout(payload) {
     const options = {
       method: 'POST',
